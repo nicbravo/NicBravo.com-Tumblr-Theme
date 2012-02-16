@@ -1,0 +1,55 @@
+<!doctype html 
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns:og="http://ogp.me/ns#"
+xmlns:fb="https://www.facebook.com/2008/fbml">
+<!--[if lt IE 9]><html class="ie"><![endif]-->
+<!--[if gte IE 9]><!--><html class=""><!--<![endif]-->
+
+<head>
+	<meta charset="utf-8"/>
+	<title>{Title}{block:PostTitle}: "{PostTitle}"{/block:PostTitle}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	{block:Description}
+	<meta name="description" content="{MetaDescription}" />
+	{/block:Description}
+	<meta name="author" content=""/>
+	
+	{block:IndexPage}<meta property="og:title" content="{Title}" />{/block:IndexPage}
+	{block:PermalinkPage}{block:PostTitle}<meta property="og:title" content="{PostTitle}" />{/block:PostTitle}{/block:PermalinkPage}
+	<meta property="og:type" content="public_figure" />
+	<meta property="og:url" content="http://nicbravo.com" />
+	<meta property="og:image" content="{PortraitURL-128}" />
+	<meta property="og:site_name" content="Nic Bravo" />
+	<meta property="fb:admins" content="100001782661441" />
+	{block:Description}
+	<meta property="og:description"
+          content="{MetaDescription}"/>
+	{/block:Description}
+	
+	
+	<link rel="stylesheet" href="style.css"/>
+	
+	<link rel="Shortcut Icon" href="{Favicon}" type="image/x-icon" />
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+	
+	<script src="GGS.js"></script>
+	
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body lang="en">
+
+	<header><h1>{Title}</h1></header>
+
+	<section id="about">
+		<article>
+			{Description}
+		</article>
+	</section>
+
+</body>
+</html>
