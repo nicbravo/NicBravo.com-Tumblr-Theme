@@ -1,0 +1,22 @@
+/* TEAM */
+
+	Author: Nic Bravo
+	Contact: absolutely anything at all, at nicbravo.com
+	Twitter: @nicbravo
+	In: Gaynesville, FL, USA
+
+/* THANKS */
+
+	Based on work by Joni Korpi and the HTML5Boilerplate team
+
+	Golden Grid System: Joni Korpi, http://jonikorpi.com/
+	Twitter: @jonikorpi
+	In: Espoo, Finland
+
+	HTML5Boilerplate: H5BP Team, http://html5boilerplate.com/
+
+/* SITE */
+
+	Language: English
+	Doctype: HTML5
+	IDE: TextWrangler, Git, Tumblr, Safari, iPhone
