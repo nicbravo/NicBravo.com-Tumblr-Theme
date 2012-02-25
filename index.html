@@ -209,8 +209,18 @@ h1, h2, h3, h4, h5, h6 {
 
 	</style><!--baseline grid type, from http://joshnh.com/2011/08/how-to-set-up-a-baseline-grid/-->
 	
-	<style media="screen"></style>
-	
+	<style media="screen">
+::selection 	 {background: rgb(255,255,0);}
+::-moz-selection {background: rgb(255,255,0);}
+
+a:link, a:hover, a:active, a:visited { 
+	text-decoration: none; 
+	color: inherit; 
+	font-weight: bolder; 
+}
+a:hover {text-decoration:underline}
+	</style><!-- colors and styles and things -->
+
 	<style media="screen">
 /*
 *
@@ -237,91 +247,35 @@ h1, h2, h3, h4, h5, h6 {
 	-o-box-sizing: border-box;
 	box-sizing: border-box;
 	}
-	
+
+blockquote {
+	margin-left: -.75em;
+	margin-right: 1.75em;
+	border-left: .75em solid rgb(245,245,245);
+	padding-left: 1.75em;
+}
+
+#headerbear {
+	width:100%;
+}
+header>h1 {
+	margin-top: -1em;
+	color: rgba(251,236,187,0.6);
+	text-shadow: 0 0 3px rgba(251,236,187,1);
+	-webkit-font-smoothing: antialiased; 
+}
+
+a#h1homelink:hover{
+	text-decoration:none;
+}
+/*
+@media screen and (min-width: 28em) {
+#headerbear {
+	width:50%;
+}
+}/*END min-width: 40em*/
 
 </style><!--layout-->
-	
-	<style media="print">
-
-/* @media screen and (min-width: 640px) */
-@media screen and (min-width: 40em) {
-  body {}
-  h1 {}
-}
-/*
-*
-*  Eight-column grid active
-*  ----------------------------------------------------------------------
-*  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
-*  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
-*	
-*
-*/
-/* @media screen and (min-width: 720px) */
-@media screen and (min-width: 45em) {
-  body {}
-  #twoway .wrapper {
-    float: left;
-    width: 50%;
-  }
-}
-/* @media screen and (min-width: 888px) */
-@media screen and (min-width: 55.5em) {
-  body {}
-}
-/* @media screen and (min-width: 984px) */
-@media screen and (min-width: 61.5em) {
-  body {}
-  header, #twoway {
-    margin: 0 16.666666666666664%;
-  }
-}
-/* @media screen and (min-width: 1200px) */
-@media screen and (min-width: 75em) {
-  body {}
-}
-/* @media screen and (min-width: 1392px) */
-@media screen and (min-width: 87em) {
-  body {}
-  header, #twoway {
-    margin: 0 27.77777777777778%;
-  }
-}
-/* @media screen and (min-width: 1680px) */
-@media screen and (min-width: 105em) {
-  body {}
-}
-/*
-*
-*  Sixteen-column grid active
-*  ----------------------------------------------------------------------------------------------------------------------
-*  Margin   | #  1     2     3     4     5     6     7     8     9     10    11    12    13    14    15    16  |   Margin
-*  5.55555% | %  6.25  12.5  18.75 25.0  31.25 37.5  43.75 50.0  56.25 62.5  68.75 75.0  81.25 87.5  93.75 100 | 5.55555%
-*	
-*
-*/
-/* @media screen and (min-width: 1872px) */
-@media screen and (min-width: 117em) {
-  header, #twoway {
-    margin: 0 5.555555555555555%;
-  }
-  header .wrapper {
-    width: 37.5%;
-    margin-left: 25%;
-  }
-  #twoway .wrapper {
-    width: 25%;
-  }
-  #twoway .wrapper:first-child {
-    margin-left: 25%;
-  }
-}
-/* @media screen and (min-width: 2080px) */
-@media screen and (min-width: 130em) {
-  body {}
-}
-
-	</style><!--layout leftovers-->
 	
 	<link rel="Shortcut Icon" href="" type="image/x-icon" />
 	
@@ -338,8 +292,11 @@ h1, h2, h3, h4, h5, h6 {
 
 <body lang="en">
 
-	<header class="viewport-margin column-padding"><h1>Nic Bravo</h1></header>
-
+	<header class="viewport-margin column-padding">
+		<img id="headerbear" src="./IMG_0999.JPG"></img>
+		<h1><a id="h1homelink" href="http://nicbravo.com" target="_self">Nic Bravo</a></h1>
+	</header>
+	
 	<section id="main" class="viewport-margin">
 		<article id="bio" class="column-padding">
 			<p>Her majesty Madame <a href="mailto:nic@nicbravo.com" target="_blank">Nic Bravo</a> is a queer non-binary trans* lady and the queen of Gaynesville,&nbsp;FL. You should say "she".</p>
@@ -348,6 +305,7 @@ h1, h2, h3, h4, h5, h6 {
 		</article>
 	</section>
 
+<!--
 	<section id="fieldguidetest" class="viewport-margin">
 		<article id="fgart" class="column-padding">
 
@@ -460,6 +418,6 @@ h1, h2, h3, h4, h5, h6 {
 </ul>
 		</article>
 	</section>
-
+-->
 </body>
 </html>
