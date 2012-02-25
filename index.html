@@ -291,6 +291,14 @@ a#h1homelink:hover{
   margin: 0 auto;
 }
 
+.ie #headerbearface {
+	display:none;
+}
+
+.ie #headerbeartall {
+	display:none;
+}
+
 @media screen and (min-width: 28em) {
 body {
 	padding-top: 3em;
@@ -337,7 +345,32 @@ h1#nicbravotitle {
 *
 */
 
-@media screen and (min-width: 28em) 
+@media screen and (min-width: 40em) {
+body > header.viewport-margin {
+	margin: 0 5.555555555555555%;
+}
+hgroup.column-padding {
+	width:37.5%;
+}
+#headerbearwide {
+	width:100%;
+	float:none;
+	display:block;
+}
+#headerbearface {
+	display:none;
+	width:0em
+	float:none;
+}
+body > section.viewport-margin {
+	margin: 0 5.555555555555555%;
+}
+section > article {
+	float:right;
+	width: 62.5%;
+}
+
+}/*END min-width: 40em*/
 
 </style><!--layout-->
 	
@@ -356,11 +389,13 @@ h1#nicbravotitle {
 
 <body lang="en">
 
-	<header class="viewport-margin column-padding">
+	<header class="viewport-margin">
+		<hgroup class="column-padding">
 		<img id="headerbearwide" src="./IMG_0999_wide.JPG"></img>
 		<img id="headerbeartall" src="./IMG_0999_tall.JPG"></img>
 		<img id="headerbearface" src="./IMG_0999_face.jpg"></img>
 		<h1 id="nicbravotitle"><a id="h1homelink" href="http://nicbravo.com" target="_self">Nic Bravo</a></h1>
+		</hgroup>
 	</header>
 	
 	<section id="main" class="viewport-margin">
