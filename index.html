@@ -346,11 +346,9 @@ h1#nicbravotitle {
 */
 
 @media screen and (min-width: 40em) {
-body > header.viewport-margin {
-	margin: 0 5.555555555555555%;
-}
-hgroup.column-padding {
+header#masthead {
 	width:37.5%;
+	float:left;
 }
 #headerbearwide {
 	width:100%;
@@ -359,15 +357,15 @@ hgroup.column-padding {
 }
 #headerbearface {
 	display:none;
-	width:0em
-	float:none;
 }
-body > section.viewport-margin {
-	margin: 0 5.555555555555555%;
+h1#nicbravotitle {
+	margin:0;
 }
-section > article {
-	float:right;
+
+section#main {
 	width: 62.5%;
+	float:right;
+	clear:none;
 }
 
 }/*END min-width: 40em*/
@@ -389,7 +387,8 @@ section > article {
 
 <body lang="en">
 
-	<header class="viewport-margin">
+<section class="viewport-margin">
+	<header id="masthead">
 		<hgroup class="column-padding">
 		<img id="headerbearwide" src="./IMG_0999_wide.JPG"></img>
 		<img id="headerbeartall" src="./IMG_0999_tall.JPG"></img>
@@ -398,7 +397,7 @@ section > article {
 		</hgroup>
 	</header>
 	
-	<section id="main" class="viewport-margin">
+	<section id="main">
 		<article id="bio" class="column-padding">
 			<p>Her majesty Madame <a href="mailto:nic@nicbravo.com" target="_blank">Nic Bravo</a> is a queer non-binary trans* lady and the queen of Gaynesville,&nbsp;FL. You should say&nbsp;&#8220;she&#8221;.</p>
 			<p>Nic writes about her trans experience in <a href="http://stickupforyourself.nicbravo.com" target="_blank">stick up for yourself, son</a> and engages with the queer tumblr community at <a href="http://reblogs.nicbravo.com" target="_blank">Nic Bravo Reblogs</a>. She tweets dark secrets about her friends in <span class="twitter-name">@<a href="http://twitter.com/nicbravo" target="_blank">nicbravo</a></span>. She likes timeless elegance, explicit communication, consent, and cuddling, and hopes you&nbsp;do&nbsp;too.</p>
@@ -407,7 +406,7 @@ section > article {
 	</section>
 	
 <!--
-	<section id="" class="viewport-margin" >
+	<section id="">
 		<article id="" class="column-padding">
 			<h1>one</h1>
 			<h2>two</h2>
