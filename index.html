@@ -209,6 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 
 	</style><!--baseline grid type, from http://joshnh.com/2011/08/how-to-set-up-a-baseline-grid/-->
 	
+	<!-- layout styles start -->
 	<style media="screen">
 ::selection 	 {background: rgb(255,255,0);}
 ::-moz-selection {background: rgb(255,255,0);}
@@ -276,6 +277,11 @@ h1#nicbravotitle {
 	-webkit-font-smoothing: antialiased; 
 }
 
+h1#nicbravotitle a span#dotcom {
+	display: none;
+}
+
+
 a#h1homelink:hover{
 	text-decoration:none;
 }
@@ -286,17 +292,22 @@ a#h1homelink:hover{
 *  http://jonikorpi.com/leaving-old-IE-behind/
 *
 */
-.ie body {
+html.lt-ie-9 body {
   width: 640px;
   margin: 0 auto;
 }
 
-.ie #headerbearface {
+html.lt-ie-9 #headerbearface {
 	display:none;
 }
 
-.ie #headerbeartall {
+html.lt-ie-9 #headerbeartall {
 	display:none;
+}
+
+html.lt-ie-9 #headerbearwide {
+	display:block;
+	width: 100%;
 }
 
 @media screen and (min-width: 28em) {
@@ -323,11 +334,12 @@ h1#nicbravotitle {
 	float:left;
 	margin:0;
 	margin-left: .5 em;
-	margin-bottom:1em;
+	margin-bottom:.5em;
 	color: rgba(0,0,0,1);
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased; 
 }
+
 
 #main {
 	clear:both;
@@ -403,10 +415,8 @@ section#main {
 			<p>Nic writes about her trans experience in <a href="http://stickupforyourself.nicbravo.com" target="_blank">stick up for yourself, son</a> and engages with the queer tumblr community at <a href="http://reblogs.nicbravo.com" target="_blank">Nic Bravo Reblogs</a>. She tweets dark secrets about her friends in <span class="twitter-name">@<a href="http://twitter.com/nicbravo" target="_blank">nicbravo</a></span>. She likes timeless elegance, explicit communication, consent, and cuddling, and hopes you&nbsp;do&nbsp;too.</p>
             <p>She's the best person in the&nbsp;world.</p>
 		</article>
-	</section>
 	
-<!--
-	<section id="">
+
 		<article id="" class="column-padding">
 			<h1>one</h1>
 			<h2>two</h2>
@@ -421,7 +431,6 @@ section#main {
 					<li>&#8220;I don&#8217;t know how to talk about your body.&#8221; </li>
 					<li>&#8220;I don&#8217;t know who you&#8217;re attracted to!&#8221;</li>
 				</ul>
-				<p>But that&#8217;s when the weird started. I was visibly happier and more confident, my body was changing and becoming even more attractive (small, perky tits, smoother, softer skin, less muscle&#8230; all these changes I&#8217;d been desperate for for years) and yet I was getting less flirting and less attention from friends and strangers alike! I started to realize that the people I wanted to be physical with were primarily queer ladies who were used to eroticizing and interacting with cis female bodies. The weight of cisnormativity hit me like a ton of bricks. How was I ever going to get touched ever again?! This community of people I loved and desired was mired in the idea that my body was male, and therefore undesirable&#8230; it was a frightening thought. </p>
 
 				<p>I didn&#8217;t know what to do, so I asked around. First, I asked around with my friends, who didn&#8217;t know what to say. Most of these people didn&#8217;t want to fuck me anyways, so that was kinda an obvious dead-end. After I had talked everyone&#8217;s ear off about this for a while (Dykes don&#8217;t want to fuck trans* ladies! Everyone thinks I have a dick! Wahhh!) someone suggested that I leave them alone and talk to someone who was or might be interested in a physical thing with me. So, I started asking around with those folks, and immediately things started making sense. </p>
 				
@@ -434,13 +443,20 @@ section#main {
 					<li>&#8220;I don&#8217;t know how to talk about your body.&#8221; </li>
 					<li>&#8220;I don&#8217;t know who you&#8217;re attracted to!&#8221;</li>
 				</ul>
+					<blockquote>
+					<p>You probably already know that I&#8217;m a non-binary lady, neither male nor female, neither man nor woman. I like she/her/hers pronouns, by which I mean I don&#8217;t fuck anybody who calls me &#8216;he&#8217;, not for any price. Treat me like the femme lady I am, and please only use feminine language to talk about me and my body. </p>
+					
+					<ul>
+					<li>&#8220;I wouldn&#8217;t know how to touch you.&#8221; </li>
+					<li>&#8220;I&#8217;d be afraid to say the wrong thing or fuck you the wrong way. &#8221; </li>
+					<li>&#8220;I don&#8217;t know how to talk about your body.&#8221; </li>
+					<li>&#8220;I don&#8217;t know who you&#8217;re attracted to!&#8221;</li>
+				</ul>
+				</blockquote>
 				</blockquote>
 			</blockquote>
 		</article>
-	</section>
-
-
-	<section id="fieldguidetest" class="viewport-margin">
+		
 		<article id="fgart" class="column-padding">
 
 
@@ -552,6 +568,6 @@ section#main {
 </ul>
 		</article>
 	</section>
--->
+</section>
 </body>
 </html>
