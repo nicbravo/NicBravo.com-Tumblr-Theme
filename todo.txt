@@ -1,4 +1,4 @@
-https://developers.facebook.com/tools/debug
-what do to about a background image?
-what to do about typography?
-how to achieve vertical rhythym?
+x- https://developers.facebook.com/tools/debug
+x- what do to about a background image?
+x- what to do about typography?
+x- how to achieve vertical rhythym?
