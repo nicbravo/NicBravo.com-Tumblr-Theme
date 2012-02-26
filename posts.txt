@@ -1,0 +1,85 @@
+{block:Posts}
+
+{block:Text}
+<article class="post text column-padding">
+{block:Title}
+	<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}
+	<section class="body">
+		{Body}
+	</section>
+</article>
+{/block:Text}
+
+{block:Photo}
+<article class="post photo column-padding">
+	<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+{block:Caption}
+	<div class="caption">{Caption}</div>
+{/block:Caption}
+</article>
+{/block:Photo}
+
+{block:Photoset}
+<article class="post photoset column-padding">
+{Photoset-500}
+{block:Caption}
+	<div class="caption">{Caption}</div>
+{/block:Caption}
+</article>
+{/block:Photoset}
+
+{block:Quote}
+<article class="post quote column-padding">
+"{Quote}"
+{block:Source}
+	<div class="source">{Source}</div>
+{/block:Source}
+</article>
+{/block:Quote}
+
+{block:Link}
+<article class="post link column-padding">
+	<a href="{URL}" class="link" {Target}>{Name}</a>
+{block:Description}
+	<section class="description">{Description}</section>
+{/block:Description}
+</article>
+{/block:Link}
+
+{block:Chat}
+<article class="post chat column-padding">
+{block:Title}
+	<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}
+	<ul class="chat">
+{block:Lines}
+		<li class="{Alt} user_{UserNumber}">
+{block:Label}
+			<span class="label">{Label}</span>
+{/block:Label}
+			{Line}
+		</li>
+{/block:Lines}
+	</ul>
+</article>
+{/block:Chat}
+
+{block:Video}
+<article class="post video column-padding">
+	{Video-500}
+{block:Caption}
+	<section class="caption">{Caption}</section>
+{/block:Caption}
+</article>
+{/block:Video}
+
+{block:Audio}
+<article class="post audio column-padding">
+	{AudioPlayerBlack}
+{block:Caption}
+	<section class="caption">{Caption}</section>
+{/block:Caption}
+</article>
+{/block:Audio}
+{/block:Posts}

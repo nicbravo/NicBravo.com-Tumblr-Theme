@@ -4,7 +4,7 @@
 <!--[if lt IE 9]><html class="lt-ie-9" 
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:og="http://ogp.me/ns#"
-	xmlns:fb="https://www.facebook.com/2008/fbml"><![endif]-->
+    xmlns:fb="https://www.facebook.com/2008/fbml"><![endif]-->
 <!--[if gte IE 9]><!-->
 <html class="not-lt-ie-9"
     xmlns="http://www.w3.org/1999/xhtml"
@@ -13,20 +13,26 @@
 
 <head>
 	<meta charset="utf-8"/>
-	<title>Nic Bravo</title>
+	<title>{Title}{block:PostTitle}: "{PostTitle}"{/block:PostTitle}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	
-	<meta name="description" content=""/>
+	{block:PostSummary}
+	<meta name="description" content="{PostSummary}"/>
+	{/block:PostSummary}
 	
-	<meta name="author" content=""/>
+	<meta name="author" content="Nic Bravo"/>
 	
-	<meta property="og:title" content="" />
+	{block:IndexPage}<meta property="og:title" content="{Title}" />{/block:IndexPage}
+	{block:PermalinkPage}{block:PostTitle}<meta property="og:title" content="{Title}: &#8220;{PostTitle}&#8221;" />{/block:PostTitle}{/block:PermalinkPage}
 	<meta property="og:type" content="public_figure" />
 	<meta property="og:url" content="http://nicbravo.com" />
-	<meta property="og:image" content="" />
-	<meta property="og:site_name" content="" />
+	<meta property="og:image" content="{PortraitURL-128}" />
+	<meta property="og:site_name" content="Nic Bravo.com" />
 	<meta property="fb:admins" content="100001782661441" />
-	<meta property="og:description" content=""/>
+	{block:Description}
+	<meta property="og:description"
+          content="{MetaDescription}"/>
+	{/block:Description}
 	
 	<style media="screen">
 /*
@@ -314,7 +320,20 @@ html.lt-ie-9 #headerbearwide {
 	width: 100%;
 }
 
+@media screen and (min-width: 0em) {
+html {font-size:30%;}
+}
+
+@media screen and (min-width: 11em) {
+html {font-size:60%;}
+}
+
+@media screen and (min-width:18em) {
+html {font-size:100%;}
+}
+
 @media screen and (min-width: 28em) {
+html {font-size:100%;}
 body {
 	padding-top: 3em;
 }
@@ -387,13 +406,32 @@ section#main {
 
 </style><!--layout-->
 	
-	<link rel="Shortcut Icon" href="" type="image/x-icon" />
+	<link rel="Shortcut Icon" href="{Favicon}" type="image/x-icon" />
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="" />
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
 	
 	<link rel="author" href="/humans.txt" />
 	
-	<script src="GGS.js"></script> <!--take this out-->
+	<!-- GA -->
+	<script type="text/javascript">
+        
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-27285544-1']);
+          _gaq.push(['_setDomainName', 'nicbravo.com']);
+          _gaq.push(['_trackPageview']);
+        
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        
+        </script>
+	
+	<!-- iOS Safari Scroll to Hide Address Bar -->
+	<script type="text/javascript">
+		{window.addEventListener("load",function() {setTimeout(function(){window.scrollTo(0, 1);}, 0);});}
+	</script>
 	
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -405,22 +443,107 @@ section#main {
 <section class="viewport-margin">
 	<header id="masthead">
 		<hgroup class="column-padding">
-			<img id="headerbearwide" src="./IMG_0999_wide.JPG"></img>
-			<img id="headerbeartall" src="./IMG_0999_tall.JPG"></img>
-			<img id="headerbearface" src="./IMG_0999_face.jpg"></img>
-			<h1 id="nicbravotitle"><a id="h1homelink" href="http://nicbravo.com" target="_self">Nic Bravo</a></h1>
+			<img id="headerbearwide" src="http://static.tumblr.com/ohbxxku/xbJlzyrh2/img_0999_wide.jpg"></img>
+			<img id="headerbeartall" src="http://static.tumblr.com/ohbxxku/8wHlzyrgb/img_0999_tall.jpg"></img>
+			<img id="headerbearface" src="http://static.tumblr.com/ohbxxku/G2Ilzyrfj/img_0999_face.jpg"></img>
+			<h1 id="nicbravotitle"><a id="h1homelink" href="http://nicbravo.com" target="_self">{Title}</a></h1>
 		</hgroup>
 	</header>
 	
 	<section id="main">
-		<article id="bio" class="column-padding">
-			<p>Her majesty Madame <a href="mailto:nic@nicbravo.com" target="_blank">Nic Bravo</a> is a queer non-binary trans* lady and the queen of Gaynesville,&nbsp;FL. You should say&nbsp;&#8220;she&#8221;.</p>
-			<p>Nic writes about her trans experience in <a href="http://stickupforyourself.nicbravo.com" target="_blank">stick up for yourself, son</a> and engages with the queer tumblr community at <a href="http://reblogs.nicbravo.com" target="_blank">Nic Bravo Reblogs</a>. She tweets dark secrets about her friends in <span class="twitter-name">@<a href="http://twitter.com/nicbravo" target="_blank">nicbravo</a></span>. She likes timeless elegance, explicit communication, consent, and cuddling, and hopes you&nbsp;do&nbsp;too.</p>
-            <p>She's the best person in the&nbsp;world.</p>
+		<article id="description" class="column-padding">
+			{Description}
 		</article>
-	
-
 		
+		<section id="posts">
+			
+{block:Posts}
+
+{block:Text}
+<article class="post text column-padding">
+{block:Title}
+	<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}
+	<section class="body">
+		{Body}
+	</section>
+</article>
+{/block:Text}
+
+{block:Photo}
+<article class="post photo column-padding">
+	<figure><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></figure>
+{block:Caption}
+	<div class="caption">{Caption}</div>
+{/block:Caption}
+</article>
+{/block:Photo}
+
+{block:Photoset}
+<article class="post photoset column-padding">
+{Photoset-500}
+{block:Caption}
+	<div class="caption">{Caption}</div>
+{/block:Caption}
+</article>
+{/block:Photoset}
+
+{block:Quote}
+<article class="post quote column-padding">
+"{Quote}"
+{block:Source}
+	<section class="source">{Source}</section>
+{/block:Source}
+</article>
+{/block:Quote}
+
+{block:Link}
+<article class="post link column-padding">
+	<a href="{URL}" class="link" {Target}>{Name}</a>
+{block:Description}
+	<section class="description">{Description}</section>
+{/block:Description}
+</article>
+{/block:Link}
+
+{block:Chat}
+<article class="post chat column-padding">
+{block:Title}
+	<h3><a href="{Permalink}">{Title}</a></h3>
+{/block:Title}
+	<ul class="chat">
+{block:Lines}
+		<li class="{Alt} user_{UserNumber}">
+{block:Label}
+			<span class="label">{Label}</span>
+{/block:Label}
+			{Line}
+		</li>
+{/block:Lines}
+	</ul>
+</article>
+{/block:Chat}
+
+{block:Video}
+<article class="post video column-padding">
+	{Video-500}
+{block:Caption}
+	<section class="caption">{Caption}</section>
+{/block:Caption}
+</article>
+{/block:Video}
+
+{block:Audio}
+<article class="post audio column-padding">
+	{AudioPlayerBlack}
+{block:Caption}
+	<section class="caption">{Caption}</section>
+{/block:Caption}
+</article>
+{/block:Audio}
+{/block:Posts}
+			
+		</section><!--#posts-->
 	</section><!--#main-->
 </section><!--.viewport-margin-->
 </body>
