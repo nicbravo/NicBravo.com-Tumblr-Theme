@@ -9,7 +9,7 @@
 <html class="not-lt-ie-9"
     xmlns="http://www.w3.org/1999/xhtml"
     xmlns:og="http://ogp.me/ns#"
-	xmlns:fb="https://www.facebook.com/2008/fbml"><!--<![endif]-->
+    xmlns:fb="https://www.facebook.com/2008/fbml"><!--<![endif]-->
 
 <head>
 	<meta charset="utf-8"/>
@@ -26,6 +26,7 @@
 	{block:PermalinkPage}{block:PostTitle}<meta property="og:title" content="{Title}: &#8220;{PostTitle}&#8221;" />{/block:PostTitle}{/block:PermalinkPage}
 	<meta property="og:type" content="public_figure" />
 	<meta property="og:url" content="http://nicbravo.com" />
+	<!-- add block to change og:image when on a photo post page-->
 	<meta property="og:image" content="{PortraitURL-128}" />
 	<meta property="og:site_name" content="Nic Bravo.com" />
 	<meta property="fb:admins" content="100001782661441" />
@@ -33,6 +34,9 @@
 	<meta property="og:description"
           content="{MetaDescription}"/>
 	{/block:Description}
+	
+	<!-- Tumblr meta/content variable setting -->
+	<meta name="text:Author Name" content=""/>
 	
 	<style media="screen">
 /*
@@ -284,7 +288,7 @@ blockquote {
 #headerbearface {
 	display:none;
 }
-h1#nicbravotitle {
+h1#mastertitle {
 	margin-top: -22%;
 	margin-bottom: 22%;
 	color: rgba(251,236,187,0.6);
@@ -292,10 +296,21 @@ h1#nicbravotitle {
 	-webkit-font-smoothing: antialiased; 
 }
 
+span#masterauthorname {
+    display:inline;
+}
+
+span#masterauthorname:before {
+    content:"by ";
+} 
+
 a#h1homelink:hover{
 	text-decoration:none;
 }
 
+article#description {
+    display:none;
+}
 /*
 *
 *  Fixes for IE6-8
@@ -321,11 +336,11 @@ html.lt-ie-9 #headerbearwide {
 }
 
 @media screen and (min-width: 0em) {
-html {font-size:30%;}
+html {font-size:33%;}
 }
 
 @media screen and (min-width: 11em) {
-html {font-size:60%;}
+html {font-size:66%;}
 }
 
 @media screen and (min-width:18em) {
@@ -353,7 +368,7 @@ body {
 	float: left;
 }
 
-h1#nicbravotitle {
+h1#mastertitle {
 	float:left;
 	margin:0;
 	margin-left: .5 em;
@@ -362,6 +377,27 @@ h1#nicbravotitle {
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased; 
 }
+
+h1#mastertitle:before {
+    content:"“";
+}
+
+h1#mastertitle:after {
+    content:"”";
+}
+
+span#masterauthorname {
+    display:block;
+    float:left;
+}
+
+span#masterauthorname:after { 
+    content:"’s";
+}
+
+span#masterauthorname:before {
+    content:"";
+} 
 
 #main {
 	clear:both;
@@ -392,8 +428,16 @@ header#masthead {
 #headerbearface {
 	display:none;
 }
-h1#nicbravotitle {
-	margin:0;
+
+span#masterauthorname {
+    display:block;
+    float:left;
+    clear:both;
+}
+
+h1#mastertitle {
+    margin:0;
+    clear:both;
 }
 
 section#main {
@@ -405,6 +449,8 @@ section#main {
 }/*END min-width: 40em*/
 
 </style><!--layout-->
+	
+	<style media="screen">{CustomCSS}</style>
 	
 	<link rel="Shortcut Icon" href="{Favicon}" type="image/x-icon" />
 	
@@ -446,9 +492,10 @@ section#main {
 			<img id="headerbearwide" src="http://static.tumblr.com/ohbxxku/xbJlzyrh2/img_0999_wide.jpg"></img>
 			<img id="headerbeartall" src="http://static.tumblr.com/ohbxxku/8wHlzyrgb/img_0999_tall.jpg"></img>
 			<img id="headerbearface" src="http://static.tumblr.com/ohbxxku/G2Ilzyrfj/img_0999_face.jpg"></img>
-			<h1 id="nicbravotitle"><a id="h1homelink" href="http://nicbravo.com" target="_self">{Title}</a></h1>
+			{block:ifAuthorName}<span id="masterauthorname" class="big">{text:Author Name}</span>{/block:ifAuthorName}
+			<h1 id="mastertitle"><a id="h1homelink" href="/" target="_self">{Title}</a></h1>
 		</hgroup>
-	</header>
+	</header><!--#masthead-->
 	
 	<section id="main">
 		<article id="description" class="column-padding">
