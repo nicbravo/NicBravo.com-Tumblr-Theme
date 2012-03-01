@@ -295,13 +295,17 @@ h1#mastertitle {
 	-webkit-font-smoothing: antialiased; 
 }
 
+h1#mastertitle:after {
+    content:"’s";
+}
+
 a#h1homelink:hover{
 	text-decoration:none;
 }
 
 header#mainhead {
     border-bottom: .75em solid rgb(245,245,245);
-    margin-bottom: 1.5 em;
+    margin-bottom: 1.5em;
 }
 
 article#description {
@@ -363,7 +367,7 @@ body {
 
 #headerbearface {
 	display: block;
-	margin: 0px;
+	margin: 0;
 	width:3em;
 	float: left;
 }
@@ -418,6 +422,10 @@ h1#mastertitle {
     margin:0;
     clear:both;
 }
+h1#mastertitle:after {
+    content:"";
+}
+
 
 section#main {
 	width: 62.5%;
@@ -471,13 +479,7 @@ section#main {
 			<img id="headerbearwide" src="http://static.tumblr.com/ohbxxku/xbJlzyrh2/img_0999_wide.jpg"></img>
 			<img id="headerbeartall" src="http://static.tumblr.com/ohbxxku/8wHlzyrgb/img_0999_tall.jpg"></img>
 			<img id="headerbearface" src="http://static.tumblr.com/ohbxxku/G2Ilzyrfj/img_0999_face.jpg"></img>
-{block:ifAuthorName}
-            <h1 id="mastertitle">
-                <a id="h1homelink" href="/" target="_self">
-                    {text:Author Name}&#8217;s
-                </a>
-            </h1>
-{/block:ifAuthorName}
+            {block:ifAuthorName}<h1 id="mastertitle"><a id="h1homelink" href="/" target="_self">{text:Author Name}</a></h1>{/block:ifAuthorName}
 		</hgroup>
 	</header><!--#masthead-->
 	
