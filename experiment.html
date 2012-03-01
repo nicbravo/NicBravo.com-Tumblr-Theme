@@ -12,8 +12,8 @@
     xmlns:fb="https://www.facebook.com/2008/fbml"><!--<![endif]-->
 
 <head>
-    <meta charset="utf-8"/>
-    <title>{Title}{block:PostTitle}: "{PostTitle}"{/block:PostTitle}</title>
+	<meta charset="utf-8"/>
+	<title>{Title}{block:PostTitle}: "{PostTitle}"{/block:PostTitle}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	
 	{block:PostSummary}
@@ -191,17 +191,17 @@ img {
     line-height: 1em; /* 48 / 48 */
     margin-bottom: .5em; /* 24 / 48 */
 }
-.huge, h2, header#mainhead>h1 {
+.huge, h2 {
     font-size: 2.25em; /* 36 / 16 */
     line-height: 1.333333333333333em; /* 48 / 36 */
     margin-bottom: .6666666666666667em; /* 24 / 36 */
 }
-.large, h3, article.post>h1 {
+.large, h3 {
     font-size: 1.5em; /* 24 / 16 */
     line-height: 1em; /* 24 / 24 */
     margin-bottom: 1em; /* 24 / 24 */
 }
-.bigger, h4, {
+.bigger, h4 {
     font-size: 1.3125em; /* 21 / 16 */
     line-height: 1.142857142857143em; /* 24 / 21 */
     margin-bottom: 1.142857142857143em; /* 24 / 21 */
@@ -226,6 +226,7 @@ h1, h2, h3, h4, h5, h6 {
 
 	</style><!--baseline grid type, from http://joshnh.com/2011/08/how-to-set-up-a-baseline-grid/-->
 	
+
 	<style media="screen">
 ::selection 	 {background: rgb(255,255,0);}
 ::-moz-selection {background: rgb(255,255,0);}
@@ -237,7 +238,7 @@ a:link, a:hover, a:active, a:visited {
 }
 a:hover {text-decoration:underline}
 	</style><!-- colors and styles and things -->
-	
+
 	<!-- layout styles start -->
 	<style media="screen">
 /*
@@ -287,29 +288,47 @@ blockquote {
 #headerbearface {
 	display:none;
 }
-h1#mastertitle {
-	margin-top: -22%;
-	margin-bottom: 22%;
+
+h1#mastertitle-imgtest {
+    position:relative;
+	left:0px;
+    top:0px;
 	color: rgba(251,236,187,0.6);
 	text-shadow: 0 0 .0625em rgba(251,236,187,1);
 	-webkit-font-smoothing: antialiased; 
 }
 
+a#h1homelink{
+    position:relative;
+    left:0px;
+    top:0px;
+}
+
+h1#mastertitle {
+    display:none;
+    /*
+	margin-top: -22%;
+	margin-bottom: 22%;
+	color: rgba(251,236,187,0.6);
+	text-shadow: 0 0 .0625em rgba(251,236,187,1);
+	-webkit-font-smoothing: antialiased; 
+    */
+}
+
+span#masterauthorname {
+    display:none;
+}
+
+span#masterauthorname:before {
+    content:"by ";
+} 
+
 a#h1homelink:hover{
 	text-decoration:none;
 }
 
-header#mainhead {
-    border-bottom: .75em solid rgb(245,245,245);
-    margin-bottom: 1.5 em;
-}
-
 article#description {
     display:none;
-}
-
-article#post {
-	margin-bottom:1.5em;
 }
 /*
 *
@@ -377,6 +396,27 @@ h1#mastertitle {
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased; 
 }
+
+h1#mastertitle:before {
+    content:"“";
+}
+
+h1#mastertitle:after {
+    content:"”";
+}
+
+span#masterauthorname {
+    display:block;
+    float:left;
+}
+
+span#masterauthorname:after { 
+    content:"’s";
+}
+
+span#masterauthorname:before {
+    content:"";
+} 
 
 #main {
 	clear:both;
@@ -468,24 +508,16 @@ section#main {
 <section class="viewport-margin">
 	<header id="masthead">
 		<hgroup class="column-padding">
-			<img id="headerbearwide" src="http://static.tumblr.com/ohbxxku/xbJlzyrh2/img_0999_wide.jpg"></img>
+			<h1 id="mastertitle-imgtest"><a id="h1homelink" href="/" target="_self">{Title}</a></h1>
+            <img id="headerbearwide" src="http://static.tumblr.com/ohbxxku/xbJlzyrh2/img_0999_wide.jpg"></img>
 			<img id="headerbeartall" src="http://static.tumblr.com/ohbxxku/8wHlzyrgb/img_0999_tall.jpg"></img>
 			<img id="headerbearface" src="http://static.tumblr.com/ohbxxku/G2Ilzyrfj/img_0999_face.jpg"></img>
-{block:ifAuthorName}
-            <h1 id="mastertitle">
-                <a id="h1homelink" href="/" target="_self">
-                    {text:Author Name}&#8217;s
-                </a>
-            </h1>
-{/block:ifAuthorName}
+			<h1 id="mastertitle"><a id="h1homelink" href="/" target="_self">{Title}</a></h1>
+            {block:ifAuthorName}<span id="masterauthorname" class="big">{text:Author Name}</span>{/block:ifAuthorName}
 		</hgroup>
 	</header><!--#masthead-->
 	
 	<section id="main">
-        <header id="mainhead" class="column-padding">
-            <h1>&#8220;{Title}&#8221;</h1>
-        </header>
-        
 		<article id="description" class="column-padding">
 			{Description}
 		</article>
@@ -494,15 +526,11 @@ section#main {
 			
 {block:Posts}
 
-<article class="column-padding post {PostType}">
-	<header>
-		
-		
 {block:Text}
+<article class="post text column-padding">
 {block:Title}
-		<h3><a href="{Permalink}">{Title}</a></h3>
+	<h3><a href="{Permalink}">{Title}</a></h3>
 {/block:Title}
-	</header>
 	<section class="body">
 		{Body}
 	</section>
@@ -510,15 +538,8 @@ section#main {
 {/block:Text}
 
 {block:Photo}
-	</header>
-    <figure>
-{LinkOpenTag}
-		<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
-{LinkCloseTag}
-    </figure>
-{block:HighRes}
-		<a href="{PhotoURL-HighRes}">View in High-Res</a>
-{/block:HighRes}
+<article class="post photo column-padding">
+	<figure><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></figure>
 {block:Caption}
 	<div class="caption">{Caption}</div>
 {/block:Caption}
@@ -526,7 +547,7 @@ section#main {
 {/block:Photo}
 
 {block:Photoset}
-	</header>
+<article class="post photoset column-padding">
 {Photoset-500}
 {block:Caption}
 	<div class="caption">{Caption}</div>
@@ -535,16 +556,16 @@ section#main {
 {/block:Photoset}
 
 {block:Quote}
-	</header>
+<article class="post quote column-padding">
 "{Quote}"
 {block:Source}
-	<div class="source">{Source}</div>
+	<section class="source">{Source}</section>
 {/block:Source}
 </article>
 {/block:Quote}
 
 {block:Link}
-	</header>
+<article class="post link column-padding">
 	<a href="{URL}" class="link" {Target}>{Name}</a>
 {block:Description}
 	<section class="description">{Description}</section>
@@ -553,10 +574,10 @@ section#main {
 {/block:Link}
 
 {block:Chat}
+<article class="post chat column-padding">
 {block:Title}
 	<h3><a href="{Permalink}">{Title}</a></h3>
 {/block:Title}
-	</header>
 	<ul class="chat">
 {block:Lines}
 		<li class="{Alt} user_{UserNumber}">
@@ -571,7 +592,7 @@ section#main {
 {/block:Chat}
 
 {block:Video}
-	</header>
+<article class="post video column-padding">
 	{Video-500}
 {block:Caption}
 	<section class="caption">{Caption}</section>
@@ -580,18 +601,13 @@ section#main {
 {/block:Video}
 
 {block:Audio}
-	</header>
+<article class="post audio column-padding">
 	{AudioPlayerBlack}
 {block:Caption}
 	<section class="caption">{Caption}</section>
 {/block:Caption}
 </article>
 {/block:Audio}
-
-{block:Answer}
-	</header>
-{/block:Answer}
-
 {/block:Posts}
 			
 		</section><!--#posts-->

@@ -2,7 +2,7 @@
 
 <article class="column-padding post {PostType}">
 	<header>
-		{Permalink}
+		
 		
 {block:Text}
 {block:Title}
