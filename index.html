@@ -37,6 +37,8 @@
 	
 	<!-- Tumblr meta/content variable setting -->
 	<meta name="text:Author Name" content=""/>
+    <meta name="text:Author URL" content=""/>
+    <meta name="text:Apres Title" content="" />
 	
 	<style media="screen">
 /*
@@ -479,13 +481,13 @@ section#main {
 			<img id="headerbearwide" src="http://static.tumblr.com/ohbxxku/xbJlzyrh2/img_0999_wide.jpg"></img>
 			<img id="headerbeartall" src="http://static.tumblr.com/ohbxxku/8wHlzyrgb/img_0999_tall.jpg"></img>
 			<img id="headerbearface" src="http://static.tumblr.com/ohbxxku/G2Ilzyrfj/img_0999_face.jpg"></img>
-            {block:ifAuthorName}<h1 id="mastertitle"><a id="h1homelink" href="/" target="_self">{text:Author Name}</a></h1>{/block:ifAuthorName}
+            {block:ifAuthorName}<h1 id="mastertitle">{block:ifAuthorURL}<a id="h1homelink" href="{text:Author URL}" target="_self">{/block:ifAuthorURL}{text:Author Name}{block:ifAuthorURL}</a>{/block:ifAuthorURL}</h1>{/block:ifAuthorName}
 		</hgroup>
 	</header><!--#masthead-->
 	
 	<section id="main">
         <header id="mainhead" class="column-padding">
-            <h1>&#8220;{Title}&#8221;</h1>
+            <h1>&#8220;<a href="/" target="_self">{Title}{block:ifApresTitle}{text:Apres Title}</a>{/block:ifApresTitle}&#8221;</h1>
         </header>
         
 		<article id="description" class="column-padding">
