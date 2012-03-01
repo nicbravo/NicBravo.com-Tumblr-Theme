@@ -21,10 +21,12 @@
 		<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
 {LinkCloseTag}
 {block:HighRes}
+		<p class="hireslink">
 		<a href="{PhotoURL-HighRes}">View in High-Res</a>
+		</p>
 {/block:HighRes}
 {block:Caption}
-	<div class="caption">{Caption}</div>
+	<section class="caption">{Caption}</section>
 {/block:Caption}
 </article>
 {/block:Photo}
@@ -33,7 +35,7 @@
 	</header>
 {Photoset-500}
 {block:Caption}
-	<div class="caption">{Caption}</div>
+	<section class="caption">{Caption}</section>
 {/block:Caption}
 </article>
 {/block:Photoset}
@@ -42,7 +44,7 @@
 	</header>
 "{Quote}"
 {block:Source}
-	<div class="source">{Source}</div>
+	<section class="source"><p>{Source}</p></section>
 {/block:Source}
 </article>
 {/block:Quote}

@@ -14,9 +14,9 @@
 <head>
     <meta charset="utf-8"/>
     <title>{Title}{block:PostTitle}: "{PostTitle}"{/block:PostTitle}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	
-	{block:PostSummary}
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+    {block:PostSummary}
 	<meta name="description" content="{PostSummary}"/>
 	{/block:PostSummary}
 	
@@ -274,6 +274,7 @@ body {
 blockquote {
 	margin-left: -.75em;
 	margin-right: 1.75em;
+    margin-bottom: 1.5em;
 	border-left: .75em solid rgb(245,245,245);
 	padding-left: 1.75em;
 }
@@ -314,8 +315,9 @@ article#description {
     display:none;
 }
 
-article#post {
+article.post {
 	margin-bottom:1.5em;
+    border-bottom:0.75em solid rgb(245,245,245);
 }
 /*
 *
@@ -487,7 +489,7 @@ section#main {
 	
 	<section id="main">
         <header id="mainhead" class="column-padding">
-            <h1>&#8220;<a href="/" target="_self">{Title}{block:ifApresTitle}{text:Apres Title}</a>{/block:ifApresTitle}&#8221;</h1>
+            <h1>&#8220;<a href="/" target="_self">{Title}</a>{block:ifApresTitle}{text:Apres Title}{/block:ifApresTitle}&#8221;</h1>
         </header>
         
 		<article id="description" class="column-padding">
@@ -515,16 +517,16 @@ section#main {
 
 {block:Photo}
 	</header>
-    <figure>
 {LinkOpenTag}
 		<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
 {LinkCloseTag}
-    </figure>
 {block:HighRes}
+		<p class="hireslink">
 		<a href="{PhotoURL-HighRes}">View in High-Res</a>
+		</p>
 {/block:HighRes}
 {block:Caption}
-	<div class="caption">{Caption}</div>
+	<section class="caption">{Caption}</section>
 {/block:Caption}
 </article>
 {/block:Photo}
@@ -533,7 +535,7 @@ section#main {
 	</header>
 {Photoset-500}
 {block:Caption}
-	<div class="caption">{Caption}</div>
+	<section class="caption">{Caption}</section>
 {/block:Caption}
 </article>
 {/block:Photoset}
@@ -542,7 +544,7 @@ section#main {
 	</header>
 "{Quote}"
 {block:Source}
-	<div class="source">{Source}</div>
+	<section class="source"><p>{Source}</p></section>
 {/block:Source}
 </article>
 {/block:Quote}
