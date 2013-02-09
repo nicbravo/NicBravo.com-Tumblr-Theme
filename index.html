@@ -79,6 +79,7 @@
     <meta name="image:HeaderImageWide" content="http://static.tumblr.com/ohbxxku/xbJlzyrh2/img_0999_wide.jpg" />
     <meta name="image:HeaderImageTall" content="http://static.tumblr.com/ohbxxku/8wHlzyrgb/img_0999_tall.jpg" />
     <meta name="image:HeaderImageSquare" content="http://static.tumblr.com/ohbxxku/G2Ilzyrfj/img_0999_face.jpg" /> <!-- make variables for all three header images -->
+	<meta name="if:DisplayPostsOnIndexPage" content="1"/>
 	
 	<style media="screen">
 /*
@@ -526,6 +527,7 @@ section#main {
 			{Description}
 		</article>
 		
+{block:IfDisplayPostsOnIndexPage}		
 		<section id="posts">
 			
 {block:Posts}
@@ -628,9 +630,9 @@ section#main {
 	</header>
 {/block:Answer}
 
-{/block:Posts}
-			
+{/block:Posts}		
 		</section><!--#posts-->
+{/block:IfDisplayPostsOnIndexPage}	
 	</section><!--#main-->
 </section><!--.viewport-margin-->
 </body>
