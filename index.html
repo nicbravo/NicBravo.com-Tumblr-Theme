@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     
     {block:PostSummary}
-	<meta name="description" content="{PostSummary}"/>
+    <meta name="description" content="{PostSummary}"/>
 	{/block:PostSummary}
 	
 	<meta name="author" content="Nic Bravo"/>
@@ -351,6 +351,10 @@ header#mainhead {
 article.post {
 	margin-bottom:1.5em;
     border-bottom:0.75em solid rgb(245,245,245);
+}
+
+section#posts article.text section.body img {
+	max-width: 100%;
 }
 /*
 *
