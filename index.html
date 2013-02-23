@@ -20,7 +20,7 @@
     
     {block:PostSummary}
     <meta name="description" content="{PostSummary}"/>
-	{/block:PostSummary}
+    {/block:PostSummary}
 	
 	<meta name="author" content="Nic Bravo"/>
 	
@@ -520,7 +520,7 @@ section#main {
 	
 	<section id="main">
         <header id="mainhead" class="column-padding">
-            <h1>&#8220;<a href="/" target="_self">{Title}</a>{block:ifApresTitle}{text:Apres Title}{/block:ifApresTitle}&#8221;</h1>
+            <h1>{block:ifTitle}&#8220;<a href="/" target="_self">{Title}</a>{block:ifApresTitle}{text:Apres Title}{/block:ifApresTitle}&#8221;{/block:ifTitle}</h1>
         </header>
         
 		<article id="description" class="column-padding">

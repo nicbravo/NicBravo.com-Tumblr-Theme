@@ -2,6 +2,8 @@ x- https://developers.facebook.com/tools/debug
 x- what do to about a background image?
 x- what to do about typography?
 x- how to achieve vertical rhythym?
- - add variables for Open Graph tags, Author, Meta Description, etc that work better on post pages.
- - make theme work for nicbravo.com and reblogs.tumblr.com equally well
+x- add variables for Open Graph tags, Author, Meta Description, etc that work better on post pages.
+x- make theme work for nicbravo.com and reblogs.tumblr.com equally well
  - add date, time, notes to posts on index pages.
+ - make iPhone header image 100% width (past margins) and leave Nic Bravo where it is
+ - change select {} color to match bear's glasses
