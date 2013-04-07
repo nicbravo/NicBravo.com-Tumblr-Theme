@@ -299,9 +299,14 @@ blockquote {
 	border-left: .75em solid rgb(245,245,245);
 	padding-left: 1.75em;
 }
-
+header#masthead hgroup.column-padding {
+	position:relative;
+	top:0px
+	}
+	
 #headerimagetall {
-	width:100%;
+	margin-left: -11.1111111111%;
+	width: 119.99999999999%;
 }
 
 #headerimagewide {
@@ -312,8 +317,8 @@ blockquote {
 	display:none;
 }
 h1#mastertitle {
-	margin-top: -22%;
-	margin-bottom: 22%;
+	position:absolute;
+	top: 0.5em;
 	color: rgba(251,236,187,0.6);
 	text-shadow: 0 0 .0625em rgba(251,236,187,1);
 	-webkit-font-smoothing: antialiased; 
@@ -394,9 +399,10 @@ body {
 }
 
 h1#mastertitle {
+	position: static;
 	float:left;
 	margin:0;
-	margin-left: .5 em;
+	margin-left: 0.5em;
 	margin-bottom:.5em;
 	color: rgba(0,0,0,1);
 	text-shadow: none;
@@ -440,6 +446,7 @@ span#masterauthorname {
 }
 
 h1#mastertitle {
+	position:static;
     margin:0;
     clear:both;
 }
@@ -496,10 +503,10 @@ section#main {
 	<header id="masthead">
 		<hgroup class="column-padding">
 			<img id="headerimagewide" src="{image:HeaderImageWide}"></img>
-			<img id="headerimagetall" src="{image:HeaderImageTall}"></img>
 			<img id="headerimagesquare" src="{image:HeaderImageSquare}"></img>
             {block:ifAuthorName}<h1 id="mastertitle">{block:ifAuthorURL}<a id="h1homelink" href="{text:AuthorURL}" target="_self">{/block:ifAuthorURL}{text:AuthorName}{block:ifAuthorURL}</a>{/block:ifAuthorURL}</h1>{/block:ifAuthorName}
 		</hgroup>
+			<img id="headerimagetall" src="{image:HeaderImageTall}"></img>
 	</header><!--#masthead-->
 	
 	<section id="main">
