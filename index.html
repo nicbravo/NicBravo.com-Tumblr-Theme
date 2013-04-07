@@ -14,7 +14,6 @@
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# 
                   blog: http://ogp.me/ns/blog#">
-    <meta charset="utf-8"/>
     <title>{Title}{block:PostTitle}: "{PostTitle}"{/block:PostTitle}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     
@@ -504,6 +503,10 @@ section#main {
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+    
+<!-- tumblr will include some stuff including a utf-8 declaration before slash-head -->
+
+
 </head>
 
 <body lang="en">
