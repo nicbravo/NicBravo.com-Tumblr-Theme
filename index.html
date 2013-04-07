@@ -27,49 +27,29 @@
 	{block:IndexPage}
 		<meta property="og:type" 			content="{text:FbOGType}" />
 		<meta property="og:url" 			content="{text:FbOGCannonicalURL}" />
-		{block:ifFbOGTitle}
-			<meta property="og:title" 			content="{text:FbOGTitle}" />
-		{/block:ifFbOGTitle}
-		{block:ifnotFbOGTitle}
-			<meta property="og:title" 			content="{Title}" />
-		{/block:ifnotFbOGTitle}
-		{block:ifFbOGDescription}
-		<meta property="og:description"		content="{text:FbOGDescription}"/>
-		{/block:ifFbOGDescription}
-		{block:ifnotFbOGDescription}
-		<meta property="og:description"		content="{MetaDescription}"/>
-		{/block:ifnotFbOGDescription}
+		{block:ifFbOGTitle}<meta property="og:title" 			content="{text:FbOGTitle}" />{/block:ifFbOGTitle}
+		{block:ifnotFbOGTitle}<meta property="og:title" 			content="{Title}" />{/block:ifnotFbOGTitle}
+		{block:ifFbOGDescription}<meta property="og:description"		content="{text:FbOGDescription}"/>{/block:ifFbOGDescription}
+		{block:ifnotFbOGDescription}<meta property="og:description"		content="{MetaDescription}"/>{/block:ifnotFbOGDescription}
 		{text:CustomOpenGraphTagsIndex}
 	{/block:IndexPage}
-	
 	{block:PermalinkPage}
 		<meta property="og:type" 			content="article" />
 		<meta property="og:url" 			content="{Permalink}" />
-		{block:ifFbOGTitle}
-			<meta property="og:site_name" 			content="{text:FbOGTitle}" />
-		{/block:ifFbOGTitle}
-		{block:ifnotFbOGTitle}
-			<meta property="og:site_name" 			content="{Title}" />
-		{/block:ifnotFbOGTitle}
-		{block:PostTitle}
-		<meta property="og:title" 			content="{PostTitle}" />
-		{/block:PostTitle}
+		{block:ifFbOGTitle}<meta property="og:site_name" 			content="{text:FbOGTitle}" />{/block:ifFbOGTitle}
+		{block:ifnotFbOGTitle}<meta property="og:site_name" 			content="{Title}" />{/block:ifnotFbOGTitle}
+		{block:PostTitle}<meta property="og:title" 			content="{PostTitle}" />{/block:PostTitle}
 		{text:CustomOpenGraphTagsPermalink}
 	{/block:PermalinkPage}
-	
-	{block:ifFbOGImage}
-		<meta property="og:image" 			content="{text:FbOGImage}" />
-	{/block:ifFbOGImage}
-	{block:ifnotFbOGImage}
-		<meta property="og:image" 			content="{PortraitURL-128}" />
-	{/block:ifnotFbOGImage}
+	{block:ifFbOGImage}<meta property="og:image" 			content="{text:FbOGImage}" />{/block:ifFbOGImage}
+	{block:ifnotFbOGImage}<meta property="og:image" 			content="{PortraitURL-128}" />{/block:ifnotFbOGImage}
 	
 	<!-- Tumblr meta/content variable setting -->
-    <meta name="text:FbOGType" 		content="blog" />
-	<meta name="text:FbOGCannonicalURL" content="" />
-	<meta name="text:FbOGTitle" 		content="" />
-    <meta name="text:FbOGImage" 		content="" />
-    <meta name="text:FbOGDescription"	content="" /> 
+    <meta name="text:FbOGType" 						content="blog" />
+	<meta name="text:FbOGCannonicalURL" 			content="" />
+	<meta name="text:FbOGTitle" 					content="" />
+    <meta name="text:FbOGImage" 					content="" />
+    <meta name="text:FbOGDescription"				content="" /> 
     <meta name="text:CustomOpenGraphTagsIndex" 		content="" />
     <meta name="text:CustomOpenGraphTagsPermalink" 	content="" />
 	<meta name="text:AuthorName" 					content="" />
@@ -78,7 +58,8 @@
     <meta name="image:HeaderImageWide" content="http://static.tumblr.com/ohbxxku/xbJlzyrh2/img_0999_wide.jpg" />
     <meta name="image:HeaderImageTall" content="http://static.tumblr.com/ohbxxku/8wHlzyrgb/img_0999_tall.jpg" />
     <meta name="image:HeaderImageSquare" content="http://static.tumblr.com/ohbxxku/G2Ilzyrfj/img_0999_face.jpg" /> <!-- make variables for all three header images -->
-	<meta name="if:DisplayPostsOnIndexPage" content="1"/>
+	<meta name="if:DisplayPostsOnIndexPage" 		content="1" />
+	<meta name="if:DisplayBlogTitle"				content="1" />
 	
 	<style media="screen">
 /*
@@ -522,9 +503,9 @@ section#main {
 	</header><!--#masthead-->
 	
 	<section id="main">
-        <header id="mainhead" class="column-padding">
-            <h1>{block:ifTitle}&#8220;<a href="/" target="_self">{Title}</a>{block:ifApresTitle}{text:Apres Title}{/block:ifApresTitle}&#8221;{/block:ifTitle}</h1>
-        </header>
+        {block:ifDisplayBlogTitle}<header id="mainhead" class="column-padding">
+            <h1>&#8220;<a href="/" target="_self">{Title}</a>{block:ifApresTitle}{text:Apres Title}{/block:ifApresTitle}&#8221;</h1>
+        </header>{/block:ifDisplayBlogTitle}
         
 		<article id="description" class="column-padding">
 			{Description}
