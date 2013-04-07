@@ -316,9 +316,18 @@ header#masthead hgroup.column-padding {
 #headerimagesquare {
 	display:none;
 }
-h1#mastertitle {
+
+h1#authorname {
 	position:absolute;
 	top: 0.5em;
+	color: rgba(251,236,187,0.6);
+	text-shadow: 0 0 .0625em rgba(251,236,187,1);
+	-webkit-font-smoothing: antialiased; 
+}
+
+h2#fourcolblogtitle {
+	position: absolute;
+	bottom: 0.5em;
 	color: rgba(251,236,187,0.6);
 	text-shadow: 0 0 .0625em rgba(251,236,187,1);
 	-webkit-font-smoothing: antialiased; 
@@ -331,6 +340,7 @@ a#h1homelink:hover{
 header#mainhead {
     border-bottom: .75em solid rgb(245,245,245);
     margin-bottom: 1.5em;
+    display: none;
 } 
 
 article.post {
@@ -398,7 +408,7 @@ body {
 	float: left;
 }
 
-h1#mastertitle {
+h1#authorname {
 	position: static;
 	float:left;
 	margin:0;
@@ -408,6 +418,13 @@ h1#mastertitle {
 	text-shadow: none;
 	-webkit-font-smoothing: antialiased; 
 }
+
+h2#fourcolblogtitle {
+	display:none;
+}
+
+header#mainhead { 
+    display: inline;
 
 #main {
 	clear:both;
@@ -445,7 +462,7 @@ span#masterauthorname {
     clear:both;
 }
 
-h1#mastertitle {
+h1#authorname {
 	position:static;
     margin:0;
     clear:both;
@@ -504,7 +521,8 @@ section#main {
 		<hgroup class="column-padding">
 			<img id="headerimagewide" src="{image:HeaderImageWide}"></img>
 			<img id="headerimagesquare" src="{image:HeaderImageSquare}"></img>
-            {block:ifAuthorName}<h1 id="mastertitle">{block:ifAuthorURL}<a id="h1homelink" href="{text:AuthorURL}" target="_self">{/block:ifAuthorURL}{text:AuthorName}{block:ifAuthorURL}</a>{/block:ifAuthorURL}</h1>{/block:ifAuthorName}
+            {block:ifAuthorName}<h1 id="authorname">{block:ifAuthorURL}<a id="h1homelink" href="{text:AuthorURL}" target="_self">{/block:ifAuthorURL}{text:AuthorName}{block:ifAuthorURL}</a>{/block:ifAuthorURL}</h1>{/block:ifAuthorName}
+			{block:ifDisplayBlogTitle}<h2 id="fourcolblogtitle">&#8220;<a href="/" target="_self">{Title}</a>{block:ifApresTitle}{text:ApresTitle}{/block:ifApresTitle}&#8221;</h2>{/block:ifDisplayBlogTitle}		
 		</hgroup>
 			<img id="headerimagetall" src="{image:HeaderImageTall}"></img>
 	</header><!--#masthead-->
