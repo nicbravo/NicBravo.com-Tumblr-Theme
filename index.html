@@ -20,7 +20,7 @@
     {block:PostSummary}
     <meta name="description" content="{PostSummary}"/>
     {/block:PostSummary}
-	
+    
 	<meta name="author" content="Nic Bravo"/>
 	
 	<!-- Facebook OpenGraph -->
@@ -299,14 +299,15 @@ blockquote {
 	border-left: .75em solid rgb(245,245,245);
 	padding-left: 1.75em;
 }
+
 header#masthead hgroup.column-padding {
 	position:relative;
-	top:0px
+	top:0px;
 	}
 	
 #headerimagetall {
-	margin-left: -11.1111111111%;
-	width: 119.99999999999%;
+	margin-left: -6%;
+	width: 113%;
 }
 
 #headerimagewide {
@@ -338,8 +339,8 @@ article.post {
     border-bottom:0.75em solid rgb(245,245,245);
 }
 
-section#posts article.text section.body img {
-	max-width: 100%;
+section#posts article.text section.body img, article.post img, .photoset {
+	max-width: 100% !important;
 }
 /*
 *
